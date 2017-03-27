@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Examples</title>
+
+  <script src="//unpkg.com/vue"></script>
+
+  <style>
+  li > a {
+    text-transform: capitalize;
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>A First Day Guide - Examples</h1>
+
+    <ul>
+      <li v-for="example in examples" :key="example">
+        <a :href="'./' + example + '/'" target="_blank">{{ example | format }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+  const app = new Vue({
+    el: '#app',
+
+    computed: {
+      examples: () => [
+          'reactive-interfaces'
+      ]
+    },
+
+    filters: {
+      format (value) {
+        return value.replace(/-/g, ' ')
+      }
+    }
+  })
+  </script>
+</body>
+</html>

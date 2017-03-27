@@ -1,0 +1,17 @@
+{
+  "name": "a-first-day-guide",
+  "version": "0.0.0",
+  "description": "Keynote for Vue.js Bangalore Talk",
+  "main": "index.js",
+  "author": "Rahul Kadyan <hi@znck.me>",
+  "license": "MIT",
+  "scripts": {
+    "build": "vue build --prod index.js",
+    "deploy": "surge --domain a-first-day-guide.surge.sh ./dist",
+    "predeploy": "yarn run build && cp -r examples ./dist"
+  },
+  "dependencies": {
+    "vue": "^2.2.4",
+    "vue-keynote": "^0.1.5"
+  }
+}

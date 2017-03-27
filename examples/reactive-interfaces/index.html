@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reactive Interfaces</title>
+
+  <script src="//unpkg.com/vue"></script>
+  <style>
+  #app {
+    font-size: 42px;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    font-size: 14px;
+    position: fixed;
+    bottom: 10px;
+  }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <h1>{{ message }}</h1>
+
+  <p>
+    Open up console & set <code>app.message</code> to something.
+
+    <button @click="message = $options.data().message">reset</button>
+  </p>
+</div>
+
+<script>
+const app = new Vue({
+  el: '#app',
+
+  data: () => ({ message: 'This is reactive.' })
+})
+</script>
+</body>
+</html>
